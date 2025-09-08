@@ -5,6 +5,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
+  get tileColor => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,12 +24,19 @@ class App extends StatelessWidget {
           leading: Icon(Icons.menu),
         ),
         drawer: Drawer(child: Center(child: Text("Drawer"))),
-        body: Column(
+        body: ListView(
           children: [
-            Text("Hello!"),
-            SizedBox(height: 20),
-            Text("Welcome to the Quote App"),
-            SizedBox(height: 20),
+            ...List.generate(
+              50,
+              (int index) => Padding(
+                padding: EdgeInsets.all(10),
+                child: ListTile(
+                  title: Text("Hello $index"),
+                  subtitle: Text("Subtitle $index"),
+                  tileColor: Colors.grey[200],
+                ),
+              ),
+            ),
           ],
         ),
       ),
