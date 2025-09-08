@@ -21,8 +21,15 @@ class App extends StatelessWidget {
           ),
           leading: Icon(Icons.menu),
         ),
-        drawer: Drawer(child: Center(child: Text("Hello World"))),
-        body: Center(child: Text("Hello World")),
+        drawer: Drawer(child: Center(child: Text("Drawer"))),
+        body: Column(
+          children: [
+            Text("Hello!"),
+            SizedBox(height: 20),
+            Text("Welcome to the Quote App"),
+            SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
